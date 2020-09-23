@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update</title>
+</head>
+<body>
+<form th:object="${nation}" method="post">
+    <table>
+        <tr>
+            <td>名族名称：<input type="text" th:field="*{name}"></td>
+        </tr>
+
+        <tr>
+            <td>男性人口：<input type="text" th:field="*{male_population}"></td>
+        </tr>
+
+        <tr>
+            <td>男性人口比例：<input type="text" th:field="*{male_rate}"></td>
+        </tr>
+
+        <tr>
+            <td>女性人口：<input type="text" th:field="*{female_populaton}"></td>
+        </tr>
+
+        <tr>
+            <td>女性人口比例：<input type="text" th:field="*{female_rate}"></td>
+        </tr>
+
+        <tr>
+            <td><input type="submit" value="提交"></td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>

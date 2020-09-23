@@ -28,6 +28,14 @@ public class NationService {
         return nationMapper.sel_all();
     }
 
+    public List<Nation> select_by_name(String name){
+        return nationMapper.sel_by_name(name);
+    }
+
+    public List<Nation> select_by_pop(int population){
+        return nationMapper.sel_by_male(population);
+    }
+
     public Nation select_one(int id){
         return nationMapper.sel(id);
     }

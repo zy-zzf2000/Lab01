@@ -21,6 +21,8 @@
         <td th:text="${nation.male_rate}"></td>
         <td th:text="${nation.female_populaton}"></td>
         <td th:text="${nation.female_rate}"></td>
+        <td ><a th:href="@{/nation/delete/{id}(id=${nation.id})}">删除</a></td>
+        <td ><a th:href="@{/nation/update/{id}(id=${nation.id})}">更新</a></td>
     </tr>
     </thead>
 </table>
