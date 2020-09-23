@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>民族列表</title>
+</head>
+<body>
+<table border="1">
+    <thead>
+    <tr>
+        <th>民族</th>
+        <th>男性人口</th>
+        <th>男性比重（%）</th>
+        <th>女性人口</th>
+        <th>女性比重（%）</th>
+    </tr>
+    <tr th:each="nation:${nations}">
+        <td th:text="${nation.name}"></td>
+        <td th:text="${nation.male_population}"></td>
+        <td th:text="${nation.male_rate}"></td>
+        <td th:text="${nation.female_populaton}"></td>
+        <td th:text="${nation.female_rate}"></td>
+    </tr>
+    </thead>
+</table>
+
+</body>
+</html>

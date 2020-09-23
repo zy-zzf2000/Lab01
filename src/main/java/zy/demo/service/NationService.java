@@ -12,23 +12,23 @@ public class NationService {
     @Autowired
     NationMapper nationMapper;
 
-    void add_nation(Nation nation){
+    public void add_nation(Nation nation){
         nationMapper.add(nation);
     }
 
-    void delete_nation(int id){
+    public void delete_nation(int id){
         nationMapper.delete(id);
     }
 
-    void update_nation(Nation nation){
+    public void update_nation(Nation nation){
         nationMapper.update(nation);
     }
 
-    List<Nation> select_all(){
+    public List<Nation> select_all(){
         return nationMapper.sel_all();
     }
 
-    Nation select_one(int id){
+    public Nation select_one(int id){
         return nationMapper.sel(id);
     }
 }
