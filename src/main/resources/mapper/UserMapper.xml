@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="zy.demo.mapper.UserMapper">
+
+    <resultMap id="UserMap" type="zy.demo.entity.User">
+        <result column="id" jdbcType="INTEGER" property="id" />
+        <result column="password" jdbcType="VARCHAR" property="password" />
+        <result column="type" jdbcType="INTEGER" property="type" />
+    </resultMap>
+
+    <select id="sel" resultType="zy.demo.entity.User">
+        select * from user where id = #{id}
+    </select>
+
+    <insert id="add" parameterType="zy.demo.entity.User">
+    	insert into user (id,password,type) values (#{id},#{password},#{type})
+    </insert>
+
+</mapper>

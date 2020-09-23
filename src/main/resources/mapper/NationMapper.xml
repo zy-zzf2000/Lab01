@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="zy.demo.mapper.NationMapper">
+
+    <resultMap id="NationMap" type="zy.demo.entity.Nation">
+        <result column="id" jdbcType="INTEGER" property="id" />
+        <result column="name" jdbcType="VARCHAR" property="name" />
+        <result column="male_population" jdbcType="INTEGER" property="male_population" />
+        <result column="male_rate" jdbcType="INTEGER" property="male_rate" />
+        <result column="female_populaton" jdbcType="INTEGER" property="female_populaton" />
+        <result column="female_rate" jdbcType="INTEGER" property="female_rate" />
+    </resultMap>
+
+
+    <select id="sel_all" resultType="zy.demo.entity.Nation">
+        select * from nation
+    </select>
+
+    <select id="sel" resultType="zy.demo.entity.Nation">
+        select * from nation where id = #{id}
+    </select>
+
+    <insert id="add" parameterType="zy.demo.entity.Nation">
+    	insert into nation (id,name,male_population,male_rate,female_populaton,female_rate)
+    	        values (#{id},#{name},#{male_population},#{male_rate},#{female_populaton},#{female_rate})
+    </insert>
+
+    <update id="update" parameterType="zy.demo.entity.Nation">
+    	update nation set
+    	name=#{name},male_population=#{male_population},male_rate=#{male_rate}, female_populaton=#{female_populaton},female_rate=#{female_rate}
+    	where id=#{id}
+    </update>
+
+    <delete id="delete" parameterType="int">
+    	delete from nation where id=#{id}
+    </delete>
+
+</mapper>
