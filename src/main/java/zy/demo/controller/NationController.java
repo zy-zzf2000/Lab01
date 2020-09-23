@@ -43,4 +43,20 @@ public class NationController {
         return view;
     }
 
+    @RequestMapping(value = "add",method = RequestMethod.GET)
+    public ModelAndView add(){
+        ModelAndView view = new ModelAndView();
+        view.setViewName("add");
+        Nation nation=new Nation();
+        view.addObject("nation",nation);
+        return view;
+    }
+
+
+    @RequestMapping(value = "add",method = RequestMethod.POST)
+    public String doadd(@ModelAttribute Nation nation){
+        nationService.add_nation(nation);
+        return "redirect:/nation/list";
+    }
+
 }

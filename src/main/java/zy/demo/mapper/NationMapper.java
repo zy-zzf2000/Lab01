@@ -9,6 +9,8 @@ import java.util.List;
 public interface NationMapper {
     List<Nation> sel_all();
     Nation sel(int id);
+    List<Nation> sel_by_name(String name);
+    List<Nation> sel_by_male(int population);
     void add(Nation nation);
     void update(Nation nation);
     void delete(int id);

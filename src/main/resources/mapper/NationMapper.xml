@@ -20,6 +20,14 @@
         select * from nation where id = #{id}
     </select>
 
+    <select id="sel_by_name" resultType="zy.demo.entity.Nation">
+        select * from nation where name = #{name}
+    </select>
+
+    <select id="sel_by_male" resultType="zy.demo.entity.Nation">
+        select * from nation where male_population >= #{population}
+    </select>
+
     <insert id="add" parameterType="zy.demo.entity.Nation">
     	insert into nation (id,name,male_population,male_rate,female_populaton,female_rate)
     	        values (#{id},#{name},#{male_population},#{male_rate},#{female_populaton},#{female_rate})
